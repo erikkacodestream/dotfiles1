@@ -10,7 +10,7 @@ echo "🚀 Setting up CSOS Development Environment..."
 mkdir -p ~/.config/csos
 
 # Install csostool in the GitHub Codespaces workspace directory
-echo "📦 Installing csostool..."
+echo "Installing csostool..."
 if [ -f "/workspaces/template-repo/student-repo/tools/csos/csosget" ]; then
     chmod -v +x /workspaces/template-repo/student-repo/tools/csos/csosget
 else
@@ -41,7 +41,7 @@ csosget init || true
 
 # Display welcome message
 cat << 'EOF'
-🎮 Welcome to your CSOS & VSCode Game Dev 2 Codespace! 
+Welcome to your CSOS & VSCode Game Dev 2 Codespace! 
 
 Quick Start. Open the VSCode terminal and type these commands:
 1. Authenticate: csosget auth
