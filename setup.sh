@@ -1,10 +1,10 @@
-#!/usr/bin/env python3
+#!/bin/bash
 set -e
 echo "Starting setup.sh"
 echo "Current directory: $(pwd)"
 echo "Contents of current directory:"
 ls -la
-echo "🚀 Setting up CSOS Development Environment..."
+echo "Setting up CSOS Development Environment..."
 
 # Create necessary directories
 mkdir -p ~/.config/csos
@@ -14,7 +14,7 @@ echo "Installing csostool..."
 if [ -f "/workspaces/template-repo/student-repo/tools/csos/csosget" ]; then
     chmod -v +x /workspaces/template-repo/student-repo/tools/csos/csosget
 else
-    echo "❌ csosget not found!"
+    echo "Error: csosget not found!"
 fi
 
 # Ensure csosget is in PATH without requiring a symlink
@@ -26,17 +26,17 @@ export PATH="/workspaces/template-repo/student-repo/tools/csos:$PATH"
 source ~/.bashrc || source ~/.bash_profile
 
 # Install Python dependencies
-echo "📚 Installing Python dependencies..."
+echo "Installing Python dependencies..."
 python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 
 # Configure git
-echo "⚙️ Configuring git..."
+echo "Configuring git..."
 git config --global pull.rebase false
 git config --global core.editor "code --wait"
 
 # Initialize csosget configuration
-echo "🔧 Initializing csosget..."
+echo "Initializing csosget..."
 csosget init || true
 
 # Display welcome message
